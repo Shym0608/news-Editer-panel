@@ -5,16 +5,16 @@ import { toast } from "react-hot-toast";
 import imageCompression from "browser-image-compression";
 
 const categories = [
-  "My City",
-  "My Gujarat",
-  "Cricket",
-  "Entertainment",
-  "India",
-  "Sport",
-  "World",
-  "Technology",
-  "Lifestyle",
-  "Business",
+  "મારું શહેર",        // My City
+  "મારું ગુજરાત",     // My Gujarat
+  "ક્રિકેટ",           // Cricket
+  "મનોરંજન",          // Entertainment
+  "ભારત",              // India
+  "રમતગમત",           // Sport
+  "વિશ્વ",              // World
+  "ટેકનોલોજી",        // Technology
+  "લાઇફસ્ટાઇલ",      // Lifestyle
+  "વ્યવસાય",          // Business
 ];
 
 const News = ({ type }) => {
@@ -96,7 +96,7 @@ const News = ({ type }) => {
     if (!storyFullContext)
       return toast.error("Please enter the full story content!");
     if (!storyCategory) return toast.error("Please select a story category!");
-    if (storyCategory === "My City") {
+    if (storyCategory === "મારું શહેર") {
       if (!storyState) return toast.error("Please enter state!");
       if (!storyCity) return toast.error("Please enter city!");
     }
@@ -107,7 +107,7 @@ const News = ({ type }) => {
       formData.append("shortDescription", storyShortDesc);
       formData.append("fullContext", storyFullContext);
       formData.append("category", storyCategory);
-      if (storyCategory === "My City") {
+      if (storyCategory === "મારું શહેર") {
         formData.append("state", storyState);
         formData.append("city", storyCity);
       }
@@ -139,7 +139,7 @@ const News = ({ type }) => {
     if (!digitalAnchor) return toast.error("Please enter anchor name!");
     if (!digitalShortDesc) return toast.error("Please enter news script!");
     if (!digitalVideo) return toast.error("Please upload a video!");
-    if (digitalCategory === "My City") {
+    if (digitalCategory === "મારું શહેર") {
       if (!digitalState) return toast.error("Please enter state!");
       if (!digitalCity) return toast.error("Please enter city!");
     }
@@ -156,7 +156,7 @@ const News = ({ type }) => {
       // ✅ FIX: field name matches backend DTO — "shortDescription" not "fullContext"
       formData.append("shortDescription", digitalShortDesc);
 
-      if (digitalCategory === "My City") {
+      if (digitalCategory === "મારું શહેર") {
         formData.append("state", digitalState);
         formData.append("city", digitalCity);
       }
@@ -256,7 +256,7 @@ const News = ({ type }) => {
             className="w-full rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 p-4 mb-6"
           />
 
-          {storyCategory === "My City" && (
+          {storyCategory === "મારું શહેર" && (
             <>
               <input
                 type="text"
@@ -369,7 +369,7 @@ const News = ({ type }) => {
           />
 
           {/* My City Fields */}
-          {digitalCategory === "My City" && (
+          {digitalCategory === "મારું શહેર" && (
             <>
               <input
                 type="text"
