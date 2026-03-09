@@ -2,12 +2,17 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 // ✅ Automatically switches between .env.local and .env.production
-const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+// const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+const BASE_URL =
+  process.env.NEXT_PUBLIC_API_BASE_URL ||
+  "https://gujarat-national-news-backend.onrender.com";
+console.log("API BASE URL:", process.env.NEXT_PUBLIC_API_BASE_URL);
 
 // Create axios instance
 const api = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
 });
+console.log("API Instance:", api.defaults.baseURL);
 
 api.interceptors.request.use(
   (config) => {
