@@ -10,7 +10,7 @@ console.log("API BASE URL:", process.env.NEXT_PUBLIC_API_BASE_URL);
 
 // Create axios instance
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_BASE_URL,
+  baseURL: BASE_URL,
 });
 console.log("API Instance:", api.defaults.baseURL);
 
